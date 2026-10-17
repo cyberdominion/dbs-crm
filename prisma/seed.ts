@@ -36,6 +36,44 @@ export default async function seed() {
     },
   });
 
+  // New credentials - additional CEO
+  const coCeoPassword = await hash('CoCeoPassword123!', 12);
+  await db.user.create({
+    data: {
+      email: 'co-ceo@dbs.example.com',
+      name: 'Co-CEO',
+      role: 'CEO',
+      organizationId: org.id,
+      emailVerified: new Date(),
+      passwordHash: coCeoPassword,
+    },
+  });
+
+  // New credentials - additional assistants
+  const opsPassword = await hash('OpsPassword123!', 12);
+  await db.user.create({
+    data: {
+      email: 'ops@dbs.example.com',
+      name: 'Operations Assistant',
+      role: 'ASSISTANT',
+      organizationId: org.id,
+      emailVerified: new Date(),
+      passwordHash: opsPassword,
+    },
+  });
+
+  const salesPassword = await hash('SalesPassword123!', 12);
+  await db.user.create({
+    data: {
+      email: 'sales@dbs.example.com',
+      name: 'Sales Assistant',
+      role: 'ASSISTANT',
+      organizationId: org.id,
+      emailVerified: new Date(),
+      passwordHash: salesPassword,
+    },
+  });
+
   await db.prospect.create({
     data: {
       organizationId: org.id,
