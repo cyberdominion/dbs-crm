@@ -68,8 +68,8 @@ export async function POST(req: Request) {
 
     return NextResponse.json(prospect, { status: 201 });
   } catch (_err: any) {
-    if (err?.issues) {
-      return NextResponse.json({ error: 'Validation failed', issues: err.issues }, { status: 422 });
+    if (_err?.issues) {
+      return NextResponse.json({ error: 'Validation failed', issues: _err.issues }, { status: 422 });
     }
     return NextResponse.json({ error: 'Internal error' }, { status: 500 });
   }

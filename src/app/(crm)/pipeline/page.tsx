@@ -1,8 +1,14 @@
 export default function PipelinePage() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold">Pipeline</h1>
-      <p className="text-muted-foreground">View prospects by sales stage.</p>
+    <div className="animate-fade-in">
+      <div>
+        <h1 className="font-serif text-3xl font-bold tracking-tight text-foreground">
+          Pipeline
+        </h1>
+        <p className="mt-1 text-muted-foreground">
+          View prospects by sales stage.
+        </p>
+      </div>
     </div>
   );
 }

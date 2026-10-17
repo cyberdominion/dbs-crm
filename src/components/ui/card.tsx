@@ -8,9 +8,13 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function Card({ title, value, children, className }: CardProps) {
   return (
-    <div className={`rounded-lg border bg-card p-6 ${className || ''}`}>
-      {title && <h2 className="text-sm font-medium text-muted-foreground">{title}</h2>}
-      {value && <div className="text-2xl font-bold">{value}</div>}
+    <div className={`rounded-xl border bg-card p-6 transition-all duration-200 hover:border-primary/30 ${className || ''}`}>
+      {title && (
+        <h2 className="mb-2 font-serif text-sm font-semibold tracking-tight text-foreground">
+          {title}
+        </h2>
+      )}
+      {value && <div className="text-2xl font-bold text-foreground">{value}</div>}
       {children}
     </div>
   );
